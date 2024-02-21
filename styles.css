@@ -1,0 +1,83 @@
+html {
+	background-color: whitesmoke;
+	font-size: 16px;
+	font-family: sans-serif;
+}
+
+main {
+	padding: 0 .3em;
+}
+
+.chart-section {
+	background-color: white;
+	border-radius: 1em;
+	max-width: 1000px;
+	margin: 3rem auto;
+	box-sizing: border-box;
+	padding: 2em;
+}
+
+.timeline-chart {
+	width: 100%;
+	height: 195px;
+	container: timeline / inline-size;
+}
+
+.timeline-chart text {
+	font-size: .5em;
+}
+
+.x-labels {
+	text-anchor: middle;
+}
+
+.y-labels {
+	text-anchor: end;
+}
+
+.dot {
+	fill: blue;
+	stroke-width: 2;
+	stroke: white;
+}
+
+.dot:nth-child(2n):not(:last-child),
+.x-labels text:nth-child(2n):not(:last-child) {
+    visibility: hidden;
+}
+
+@container timeline (width <= 700px) {
+    .dot:nth-child(4n-1),
+    .dot:nth-last-child(2),
+    .x-labels text:nth-last-child(2),
+    .x-labels text:nth-child(4n-1) {
+        visibility: hidden;
+    }
+}
+
+.all-dots .x-labels text,
+.all-dots .dot {
+	visibility: visible !important;
+}
+
+.controls {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2em;
+}
+
+.input {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+datalist {
+  display: flex;
+  justify-content: space-between;
+	width: 100%;
+}
+
+option {
+  padding: 0;
+}
